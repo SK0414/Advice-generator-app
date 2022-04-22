@@ -1,5 +1,12 @@
 # Advice Generator app
-https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db
+https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db  
+  
+## Libraries
+- next.js
+- react-query
+- emotion
+- storybook
+- msw
 
 ### Demo
 https://advice-generator-4lud6lc6g-sk0414.vercel.app/  
