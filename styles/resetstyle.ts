@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css } from '@emotion/react';
 
 const ResetCSS = css`
   html,
@@ -121,7 +121,7 @@ const ResetCSS = css`
     display: block;
     width: 0;
     height: 0;
-    content: "\\00a0";
+    content: '\\00a0';
     font-size: 0;
   }
   * {

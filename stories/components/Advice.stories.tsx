@@ -1,7 +1,7 @@
-import React from "react";
-import { rest } from "msw";
-import Advice from "@/components/Advice";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import React from 'react';
+import { rest } from 'msw';
+import Advice from '@/components/Advice';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 const MOCKDATA = {
   slip: {
@@ -11,11 +11,11 @@ const MOCKDATA = {
 };
 
 export default {
-  title: "Advice",
+  title: 'Advice',
   component: Advice,
   parameters: {
     msw: [
-      rest.get("https://api.adviceslip.com/advice", (_, res, ctx) => {
+      rest.get('https://api.adviceslip.com/advice', (_, res, ctx) => {
         return res(ctx.json(MOCKDATA));
       }),
     ],
@@ -25,16 +25,16 @@ export default {
 const Template: ComponentStory<typeof Advice> = (args) => <Advice {...args} />;
 
 export const Default = Template.bind({});
-Default.storyName = "기본화면";
+Default.storyName = '기본화면';
 
 export const Loading = Template.bind({});
-Loading.storyName = "로딩화면";
+Loading.storyName = '로딩화면';
 Loading.parameters = {
-  msw: [rest.get("https://api.adviceslip.com/advice", (_, res, ctx) => res(ctx.delay("infinite")))],
+  msw: [rest.get('https://api.adviceslip.com/advice', (_, res, ctx) => res(ctx.delay('infinite')))],
 };
 
 export const Error = Template.bind({});
-Error.storyName = "에러화면";
+Error.storyName = '에러화면';
 Error.parameters = {
-  msw: [rest.get("https://api.adviceslip.com/advice", (_, res, ctx) => res(ctx.status(500)))],
+  msw: [rest.get('https://api.adviceslip.com/advice', (_, res, ctx) => res(ctx.status(500)))],
 };

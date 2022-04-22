@@ -1,10 +1,10 @@
-import React, { FC, ReactChild, ReactNode } from "react";
-import { useQuery, useQueryClient } from "react-query";
-import axios from "axios";
-import Head from "next/head";
-import { NextPage } from "next/types";
-import styled from "@emotion/styled";
-import Dice from "@/public/assets/icons/Dice.svg";
+import React, { FC, ReactChild, ReactNode } from 'react';
+import { useQuery, useQueryClient } from 'react-query';
+import axios from 'axios';
+import Head from 'next/head';
+import { NextPage } from 'next/types';
+import styled from '@emotion/styled';
+import Dice from '@/public/assets/icons/Dice.svg';
 
 const Card = styled.section`
   position: relative;
@@ -39,7 +39,7 @@ const Divider = styled.div`
   position: relative;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 1px;
@@ -86,10 +86,10 @@ const ResetButton = styled.button`
 
 const Advice: NextPage = () => {
   const fetchData = async () => {
-    return await axios.get("https://api.adviceslip.com/advice");
+    return await axios.get('https://api.adviceslip.com/advice');
   };
 
-  const { data, error, refetch, isError, isLoading, isFetching } = useQuery("getAdvice", fetchData, {
+  const { data, error, refetch, isError, isLoading, isFetching } = useQuery('getAdvice', fetchData, {
     refetchOnWindowFocus: false,
   });
 
@@ -112,10 +112,10 @@ const Advice: NextPage = () => {
         <Divider>
           <div className="dividerWrap">
             <div className="dividerIcon" />
-            <div className="dividerIcon" style={{ marginLeft: "8px" }} />
+            <div className="dividerIcon" style={{ marginLeft: '8px' }} />
           </div>
         </Divider>
-        <ResetButton onClick={() => refetch()}>
+        <ResetButton onClick={() => refetch()} disabled={isFetching}>
           <Dice />
         </ResetButton>
       </Card>

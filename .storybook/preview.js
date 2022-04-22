@@ -1,9 +1,9 @@
-import { addDecorator } from "@storybook/react";
-import { initialize, mswDecorator } from "msw-storybook-addon";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { GlobalStyles } from "@/styles/GlobalStyle";
-import { ThemeProvider } from "@emotion/react";
-import Theme from "@/styles/Theme";
+import { addDecorator } from '@storybook/react';
+import { initialize, mswDecorator } from 'msw-storybook-addon';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { GlobalStyles } from '@/styles/GlobalStyle';
+import { ThemeProvider } from '@emotion/react';
+import Theme from '@/styles/Theme';
 
 initialize();
 addDecorator(mswDecorator);
@@ -19,7 +19,7 @@ const mockedQueryClient = new QueryClient({
 });
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
